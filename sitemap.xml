@@ -24,7 +24,9 @@
     <url>
         <loc>https://Oswells.github.io/archive/</loc>
     </url>
-    
+    <url>
+        <loc>https://Oswells.github.io/travel/</loc>
+    </url>
     <url>
         <loc>https://Oswells.github.io/sitemap.xml</loc>
     </url>
@@ -39,5 +41,8 @@
         <loc>https://Oswells.github.io/articles/2020/Electronic_Design_Contest/</loc>
     </url>
 
-    
+    <url>
+        <loc>https://Oswells.github.io/travel/2020/Mountain_Zu/</loc>
+    </url>
+
 </urlset>
