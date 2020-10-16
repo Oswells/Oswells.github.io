@@ -1,0 +1,268 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh"><!--<![endif]-->
+
+
+<!-- use Ctrl+F and type '##' to find which sentence need to change -->
+<head>
+<meta charset="utf-8">
+<title>Add Gitalk to Your Site</title>
+<meta name="description" content="Add Gitalk to Your Site">
+
+<meta name="keywords" content="gitalk">
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="zh_CN">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Add Gitalk to Your Site">
+<meta property="og:description" content="Add Gitalk to Your Site">
+<meta property="og:url" content="https://Oswells.github.io/articles/2020/Add_Gitalk_to_your_site/">
+<meta property="og:site_name" content="Junjie Zhang">
+
+
+<link rel="canonical" href="https://Oswells.github.io/articles/2020/Add_Gitalk_to_your_site/">
+<!--
+<link href="https://Oswells.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Junjie Zhang Feed">
+-->
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://Oswells.github.io/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="https://Oswells.github.io/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="https://Oswells.github.io/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="https://Oswells.github.io/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="https://Oswells.github.io/images/1616.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="https://Oswells.github.io/images/3232.ico">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="https://Oswells.github.io/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://Oswells.github.io/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://Oswells.github.io/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://Oswells.github.io/images/apple-touch-icon-144x144-precomposed.png">
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+<div class="navigation-wrapper">
+  <div class="site-name">
+    <a href="https://Oswells.github.io/">JUNJIE</a>
+  </div><!-- /.site-name -->
+  <div class="top-navigation">
+    <nav role="navigation" id="site-nav" class="nav">
+        <ul>                
+            
+            <li><a href="https://Oswells.github.io/archive/index.html" >Archive</a></li>
+          
+            
+            <li><a href="https://Oswells.github.io/travel/index.html" >Travel</a></li>
+
+            
+            <li><a href="https://Oswells.github.io/about/index.html" >About</a></li>
+        
+        </ul>
+    </nav>
+  </div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+
+  <img src="https://Oswells.github.io/images/junjie.jpg" class="bio-photo" alt="Junjie Zhang avatar">
+
+
+<h3>Junjie Zhang</h3>
+<p>A college student</p>
+<a href="mailto:maiwei183@163.com" class="author-widgets" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+<!--
+<a href="http://twitter.com/Oswells" class="author-widgets" target="_blank"><i class="fa fa-fw fa-tw-square"></i> Twitter</a>
+-->
+
+<a href="http://github.com/Oswells" class="author-widgets" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+
+
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a rel="bookmark" title="Add Gitalk to Your Site">Add Gitalk to Your Site</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>Reference:<a href="https://github.com/gitalk/gitalk">https://github.com/gitalk/gitalk</a></p>
+
+
+<!--正文-->
+
+<h3 id="First Step">First Step</h3>
+<p>Create a new warehouse, Gitalk needs to occupy its issue</p>
+
+<h3 id="Second Step">Second Step</h3>
+<p>Click <a href="https://github.com/settings/applications/new">here</a> to register a new OAuth application.</p>
+<img src="https://Oswells.github.io/articles/2020/Add_Gitalk_to_your_site/images/1.jpg" width=50%>
+
+<h3 id="Thrid Step">Thrid Step</h3>
+<p>Add the following code to your code</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">
+<span class="nv">&#60;&#100;&#105;&#118;&#32;&#105;&#100;&#61;&#34;&#103;&#105;&#116;&#97;&#108;&#107;&#45;&#99;&#111;&#110;&#116;&#97;&#105;&#110;&#101;&#114;&#34;&#62;&#60;&#47;&#100;&#105;&#118;&#62;</span>
+<span class="nv">&#60;&#108;&#105;&#110;&#107;&#32;&#114;&#101;&#108;&#61;&#34;&#115;&#116;&#121;&#108;&#101;&#115;&#104;&#101;&#101;&#116;&#34;&#32;&#104;&#114;&#101;&#102;&#61;&#34;&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#99;&#100;&#110;&#46;&#106;&#115;&#100;&#101;&#108;&#105;&#118;&#114;&#46;&#110;&#101;&#116;&#47;&#110;&#112;&#109;&#47;&#103;&#105;&#116;&#97;&#108;&#107;&#64;&#49;&#47;&#100;&#105;&#115;&#116;&#47;&#103;&#105;&#116;&#97;&#108;&#107;&#46;&#99;&#115;&#115;&#34;&#62;</span>
+<span class="nv">&#32;&#32;&#60;&#115;&#99;&#114;&#105;&#112;&#116;&#32;&#115;&#114;&#99;&#61;&#34;&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#99;&#100;&#110;&#46;&#106;&#115;&#100;&#101;&#108;&#105;&#118;&#114;&#46;&#110;&#101;&#116;&#47;&#110;&#112;&#109;&#47;&#103;&#105;&#116;&#97;&#108;&#107;&#64;&#49;&#47;&#100;&#105;&#115;&#116;&#47;&#103;&#105;&#116;&#97;&#108;&#107;&#46;&#109;&#105;&#110;&#46;&#106;&#115;&#34;&#62;&#60;&#47;&#115;&#99;&#114;&#105;&#112;&#116;&#62;</span>
+<span class="nv">&#32;&#32;&#60;&#115;&#99;&#114;&#105;&#112;&#116;&#62;</span>
+<span class="nv">&#118;&#97;&#114;&#32;&#103;&#105;&#116;&#97;&#108;&#107;&#32;&#61;&#32;&#110;&#101;&#119;&#32;&#71;&#105;&#116;&#97;&#108;&#107;&#40;&#123;</span>
+<span class="nv">&#32;&#32;&#99;&#108;&#105;&#101;&#110;&#116;&#73;&#68;&#58;&#32;&#39;&#71;&#105;&#116;&#72;&#117;&#98;&#32;&#65;&#112;&#112;&#108;&#105;&#99;&#97;&#116;&#105;&#111;&#110;&#32;&#67;&#108;&#105;&#101;&#110;&#116;&#32;&#73;&#68;&#39;&#44;</span>
+<span class="nv">&#32;&#32;&#99;&#108;&#105;&#101;&#110;&#116;&#83;&#101;&#99;&#114;&#101;&#116;&#58;&#32;&#39;&#71;&#105;&#116;&#72;&#117;&#98;&#32;&#65;&#112;&#112;&#108;&#105;&#99;&#97;&#116;&#105;&#111;&#110;&#32;&#67;&#108;&#105;&#101;&#110;&#116;&#32;&#83;&#101;&#99;&#114;&#101;&#116;&#39;&#44;</span>
+<span class="nv">&#32;&#32;&#114;&#101;&#112;&#111;&#58;&#32;&#39;&#71;&#105;&#116;&#72;&#117;&#98;&#32;&#114;&#101;&#112;&#111;&#39;&#44;</span>
+<span class="nv">&#32;&#32;&#111;&#119;&#110;&#101;&#114;&#58;&#32;&#39;&#71;&#105;&#116;&#72;&#117;&#98;&#32;&#114;&#101;&#112;&#111;&#32;&#111;&#119;&#110;&#101;&#114;&#39;&#44;</span>
+<span class="nv">&#32;&#32;&#97;&#100;&#109;&#105;&#110;&#58;&#32;&#91;&#39;&#71;&#105;&#116;&#72;&#117;&#98;&#32;&#114;&#101;&#112;&#111;&#32;&#111;&#119;&#110;&#101;&#114;&#32;&#97;&#110;&#100;&#32;&#99;&#111;&#108;&#108;&#97;&#98;&#111;&#114;&#97;&#116;&#111;&#114;&#115;&#44;&#32;&#111;&#110;&#108;&#121;&#32;&#116;&#104;&#101;&#115;&#101;&#32;&#103;&#117;&#121;&#115;&#32;&#99;&#97;&#110;&#32;&#105;&#110;&#105;&#116;&#105;&#97;&#108;&#105;&#122;&#101;&#32;&#103;&#105;&#116;&#104;&#117;&#98;&#32;&#105;&#115;&#115;&#117;&#101;&#115;&#39;&#93;&#44;</span>
+<span class="nv">&#32;&#32;&#105;&#100;&#58;&#32;&#108;&#111;&#99;&#97;&#116;&#105;&#111;&#110;&#46;&#112;&#97;&#116;&#104;&#110;&#97;&#109;&#101;&#44;&#32;&#32;&#32;&#32;&#32;<span class="c">&#47;&#47;&#32;&#69;&#110;&#115;&#117;&#114;&#101;&#32;&#117;&#110;&#105;&#113;&#117;&#101;&#110;&#101;&#115;&#115;&#32;&#97;&#110;&#100;&#32;&#108;&#101;&#110;&#103;&#116;&#104;&#32;&#108;&#101;&#115;&#115;&#32;&#116;&#104;&#97;&#110;&#32;&#53;&#48;</span></span>
+<span class="nv">&#32;&#32;&#100;&#105;&#115;&#116;&#114;&#97;&#99;&#116;&#105;&#111;&#110;&#70;&#114;&#101;&#101;&#77;&#111;&#100;&#101;&#58;&#32;&#102;&#97;&#108;&#115;&#101;&#32;&#32;<span class="c">&#32;&#47;&#47;&#32;&#70;&#97;&#99;&#101;&#98;&#111;&#111;&#107;&#45;&#108;&#105;&#107;&#101;&#32;&#100;&#105;&#115;&#116;&#114;&#97;&#99;&#116;&#105;&#111;&#110;&#32;&#102;&#114;&#101;&#101;&#32;&#109;&#111;&#100;&#101;</span></span>
+<span class="nv">&#125;&#41;</span>
+<span class="nv">&#103;&#105;&#116;&#97;&#108;&#107;&#46;&#114;&#101;&#110;&#100;&#101;&#114;&#40;&#39;&#103;&#105;&#116;&#97;&#108;&#107;&#45;&#99;&#111;&#110;&#116;&#97;&#105;&#110;&#101;&#114;&#39;&#41;</span>
+<span class="nv">&#60;&#47;&#115;&#99;&#114;&#105;&#112;&#116;&#62;</span>
+</div>
+<p>ClientID and clientSecret are available on the page after you've built your app.</p>
+<p>Repo is the name of the repository created in the first step.</p>
+<p>Owner is gitHub repository owner. Can be personal user or organization.</p>
+<p>Admin is gitHub repository owner and collaborators. (Users who having write access to this repository)</p>
+<H4>An example</H4>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">
+<span class="nv">&#60;&#100;&#105;&#118;&#32;&#105;&#100;&#61;&#34;&#103;&#105;&#116;&#97;&#108;&#107;&#45;&#99;&#111;&#110;&#116;&#97;&#105;&#110;&#101;&#114;&#34;&#62;&#60;&#47;&#100;&#105;&#118;&#62;</span>
+<span class="nv">&#60;&#108;&#105;&#110;&#107;&#32;&#114;&#101;&#108;&#61;&#34;&#115;&#116;&#121;&#108;&#101;&#115;&#104;&#101;&#101;&#116;&#34;&#32;&#104;&#114;&#101;&#102;&#61;&#34;&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#99;&#100;&#110;&#46;&#106;&#115;&#100;&#101;&#108;&#105;&#118;&#114;&#46;&#110;&#101;&#116;&#47;&#110;&#112;&#109;&#47;&#103;&#105;&#116;&#97;&#108;&#107;&#64;&#49;&#47;&#100;&#105;&#115;&#116;&#47;&#103;&#105;&#116;&#97;&#108;&#107;&#46;&#99;&#115;&#115;&#34;&#62;</span>
+<span class="nv">&#32;&#32;&#60;&#115;&#99;&#114;&#105;&#112;&#116;&#32;&#115;&#114;&#99;&#61;&#34;&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#99;&#100;&#110;&#46;&#106;&#115;&#100;&#101;&#108;&#105;&#118;&#114;&#46;&#110;&#101;&#116;&#47;&#110;&#112;&#109;&#47;&#103;&#105;&#116;&#97;&#108;&#107;&#64;&#49;&#47;&#100;&#105;&#115;&#116;&#47;&#103;&#105;&#116;&#97;&#108;&#107;&#46;&#109;&#105;&#110;&#46;&#106;&#115;&#34;&#62;&#60;&#47;&#115;&#99;&#114;&#105;&#112;&#116;&#62;</span>
+<span class="nv">&#32;&#32;&#60;&#115;&#99;&#114;&#105;&#112;&#116;&#62;</span>
+<span class="nv">&#118;&#97;&#114;&#32;&#103;&#105;&#116;&#97;&#108;&#107;&#32;&#61;&#32;&#110;&#101;&#119;&#32;&#71;&#105;&#116;&#97;&#108;&#107;&#40;&#123;</span>
+<span class="nv">&#32;&#32;&#32;&#32;&#99;&#108;&#105;&#101;&#110;&#116;&#73;&#68;&#58;&#32;&#39;&#57;&#54;&#100;&#99;&#54;&#57;&#98;&#55;&#101;&#56;&#48;&#102;&#54;&#50;&#102;&#57;&#97;&#56;&#97;&#102;&#39;&#44;</span>
+<span class="nv">&#32;&#32;&#32;&#32;&#99;&#108;&#105;&#101;&#110;&#116;&#83;&#101;&#99;&#114;&#101;&#116;&#58;&#32;&#39;&#101;&#49;&#49;&#52;&#49;&#51;&#53;&#57;&#100;&#51;&#98;&#101;&#51;&#54;&#49;&#57;&#99;&#57;&#54;&#100;&#97;&#102;&#57;&#97;&#97;&#102;&#49;&#48;&#54;&#98;&#98;&#102;&#97;&#53;&#100;&#98;&#57;&#53;&#99;&#49;&#39;&#44;</span>
+<span class="nv">&#32;&#32;&#32;&#32;&#114;&#101;&#112;&#111;&#58;&#32;&#39;&#67;&#79;&#77;&#77;&#69;&#78;&#84;&#83;&#39;&#44;</span>
+<span class="nv">&#32;&#32;&#32;&#32;&#111;&#119;&#110;&#101;&#114;&#58;&#32;&#39;&#79;&#115;&#119;&#101;&#108;&#108;&#115;&#39;&#44;</span>
+<span class="nv">&#32;&#32;&#32;&#32;&#97;&#100;&#109;&#105;&#110;&#58;&#32;&#91;&#39;&#79;&#115;&#119;&#101;&#108;&#108;&#115;&#39;&#93;&#44;</span>
+<span class="nv">&#32;&#32;&#32;&#32;&#105;&#100;&#58;&#32;&#39;&#65;&#100;&#100;&#32;&#71;&#105;&#116;&#97;&#108;&#107;&#32;&#116;&#111;&#32;&#89;&#111;&#117;&#114;&#32;&#83;&#105;&#116;&#101;&#39;&#44;&#32;&#32;&#32;&#32;&#32;<span class="c">&#47;&#47;&#32;&#69;&#110;&#115;&#117;&#114;&#101;&#32;&#117;&#110;&#105;&#113;&#117;&#101;&#110;&#101;&#115;&#115;&#32;&#97;&#110;&#100;&#32;&#108;&#101;&#110;&#103;&#116;&#104;&#32;&#108;&#101;&#115;&#115;&#32;&#116;&#104;&#97;&#110;&#32;&#53;&#48;</span></span>
+<span class="nv">&#32;&#32;&#32;&#32;&#100;&#105;&#115;&#116;&#114;&#97;&#99;&#116;&#105;&#111;&#110;&#70;&#114;&#101;&#101;&#77;&#111;&#100;&#101;&#58;&#32;&#102;&#97;&#108;&#115;&#101;&#32;&#32;<span class="c">&#47;&#47;&#32;&#70;&#97;&#99;&#101;&#98;&#111;&#111;&#107;&#45;&#108;&#105;&#107;&#101;&#32;&#100;&#105;&#115;&#116;&#114;&#97;&#99;&#116;&#105;&#111;&#110;&#32;&#102;&#114;&#101;&#101;&#32;&#109;&#111;&#100;&#101;</span></span>
+<span class="nv">&#125;&#41;</span>
+<span class="nv">&#103;&#105;&#116;&#97;&#108;&#107;&#46;&#114;&#101;&#110;&#100;&#101;&#114;&#40;&#39;&#103;&#105;&#116;&#97;&#108;&#107;&#45;&#99;&#111;&#110;&#116;&#97;&#105;&#110;&#101;&#114;&#39;&#41;</span>
+<span class="nv">&#60;&#47;&#115;&#99;&#114;&#105;&#112;&#116;&#62;</span>
+</div>
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          
+
+        <!--结尾-->
+        </div>
+        <p class="byline"><strong>Add Gitalk to Your Site</strong> was published on <time datetime="2020-10-16T12:00:00+03:00">October 16, 2020</time> and last modified on <time datetime="2020-10-16">October 16, 2020</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+     <!--section id="disqus_thread"></section--><!-- /#disqus_thread -->
+  <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://Oswells.github.io/assets/css/gitalk.css">
+    <script src="https://Oswells.github.io/assets/js/gitalk.min.js"></script>
+    <script>
+  var gitalk = new Gitalk({
+    clientID: '96dc69b7e80f62f9a8af',
+    clientSecret: 'e1141359d3be3619c96daf9aaf106bbfa5db95c1',
+    repo: 'COMMENTS',
+    owner: 'Oswells',
+    admin: ['Oswells'],
+    id: 'Add Gitalk to Your Site',      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+  </script>
+
+  </article>
+</div><!-- /#main -->
+
+  <footer>
+    
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="https://Oswells.github.io/assets/js/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://Oswells.github.io/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="https://Oswells.github.io/assets/js/scripts.min.js"></script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ 'https://Oswells.github.io/assets/js/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-64125092-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = 'https://Oswells.github.io/assets/js/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<!--
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'https-yudodisss-github-io'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    // (function() {
+    //     var dsq = document.createElement('script');
+    //     dsq.type = 'text/javascript'; dsq.async = true;
+    //     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    //     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    // })();
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script');
+        s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+
+
+
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+-->
+</body>
+</html>
