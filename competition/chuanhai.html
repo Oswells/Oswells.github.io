@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <title>船海数据智能应用创新大赛展示</title>
+    <meta name="description" content="船海数据智能应用创新大赛展示" />
+
+
+    <link href="assets/css/plugins.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="assets/css/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <script src="assets/js/libs/modernizr-2.6.2.min.js"></script>
+
+    <link rel="shortcut icon" href="/images/1616.ico">
+    <!-- 32x32 -->
+    <link rel="shortcut icon" href="/images/3232.ico">
+    <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+    <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+    <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+    <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+    <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+    <style>
+      #chusai_img{
+        opacity:0;
+      }
+    </style>
+  </head>
+
+<body>
+  
+  <section id="page-container">
+
+
+    <!-- PHOTOGRAPHY -->
+    <section id="page-photography" class="section">
+      <div class="site-inner">
+        <h1 class="heading h-01">2022年船海数据智能应用创新大赛</h1>
+
+        <p class="copy-01">比赛链接：<a href="https://competition.huaweicloud.com/information/1000041661/introduction">点击跳转</a></br>
+            当前初赛排名第一（score:0.5336）</br>
+            成员：张钧杰，伍绍金，于富盛。</br>
+        </p>
+        <p class="copy-01">初赛</p>
+        <section id="photo-grid">
+          <div class="photo-item" id="chusai_one" data-url="#chusai_one">
+            <figure class="image-container"><img src="/images/chuanhai/340.jpg" width="450" height="450"/></figure>
+          </div>
+          <div class="photo-item" data-url="#chusai_one">
+            <figure class="image-container"><img src="/images/chuanhai/400.jpg" width="450" height="450" /></figure>
+          </div>
+          <div class="photo-item" data-url="#chusai_one">
+            <figure class="image-container"><img src="/images/chuanhai/1236.jpg" width="450" height="450" /></figure>
+          </div>
+          <div class="photo-item" id="chusai_two" data-url="#chusai_two">
+            <figure class="image-container"><img src="/images/chuanhai/1938.jpg" width="450" height="450" /></figure>
+          </div>
+          
+          <div class="photo-item" data-url="#chusai_two">
+            <figure class="image-container"><img src="/images/chuanhai/2396.jpg" width="450" height="450" /></figure>
+          </div>
+          <div class="photo-item" data-url="#chusai_two">
+            <figure class="image-container"><img src="/images/chuanhai/3975.jpg" width="450" height="450" /></figure>
+          </div>
+          <div class="photo-item" id="chusai_three" data-url="#chusai_three">
+            <figure class="image-container"><img src="/images/chuanhai/4512.jpg" width="450" height="450" /></figure>
+          </div>
+          
+          <div class="photo-item" data-url="#chusai_three">
+            <figure class="image-container"><img src="/images/chuanhai/5736.jpg" width="450" height="450" /></figure>
+          </div>
+          <div class="photo-item" data-url="#chusai_three">
+            <figure class="image-container"><img src="/images/chuanhai/7210.jpg" width="450" height="450" /></figure>
+          </div>
+          
+        </section>
+        <p class="copy-01">初赛方案</p>
+        <p class="copy-02">比赛结束后公布</p>
+
+        <p class="copy-01"></p>
+        <p class="copy-01" id="初赛模型体验">初赛模型体验</p>
+        <p class="copy-02">上传任意船海相关图像，下方会展示模型标注结果。</p>
+        <center>
+          <figure class="image-container">
+            <img src="" style="display: none;" id="chusai_yulan" width="350">
+            <img src="" style="display: none;" id="chusai_model" width="350">
+          </figure>
+          <input type="file" id="chusai_img" accept="image/*" name="image">
+          
+        </center>
+        <p class="copy-02" id="chusai_log" style="display: none;"></p>
+        <a class="button main rounded toprefine" onclick="chusai_choose()">选择图片</a>
+        <a class="button main rounded toprefine" onclick="chusai()">上传图片</a>
+        </br>
+        <!-- <p class="copy-01"></p>
+        <p class="copy-01">复赛</p> -->
+
+        <a href="/" class="button main rounded">返回主页</a>
+
+      </div>
+    </section>
+
+
+
+    <!-- FOOTER -->
+    <section id="page-footer">
+
+        <div class="social-links">
+          
+          <a href="mailto:maiwei183@163.com"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></a>
+          <a href="https://github.com/Oswells"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+          <a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1652094603&website=www.oicqzone.com"><i class="fa fa-qq fa-2x" aria-hidden="true"></i></a>
+          <!-- <a><i class="fa fa-weixin  fa-2x" aria-hidden="true"></i></a> -->
+        </div>
+  
+        <p class="copy-02">Copyright © 2021. All Rights Reserved.</p>
+        <p class="copy-02">Made With Love By @Zhang Junjie</p>
+        <p><a href="http://beian.miit.gov.cn/" class="copy-02">浙ICP备2021004017号</a></p>
+  
+      </section>
+  
+    </section>
+
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="assets/js/jquery-1.10.2.min.js"><\/script>');</script>
+
+  <script src="assets/js/plugins.js"></script>
+  <script src="assets/js/application.js"></script>
+  <script>
+    function chusai() {
+      var newImg = document.getElementById("chusai_model");
+      var chusai_log = document.getElementById("chusai_log");
+      var img = $('#chusai_img')[0].files[0];
+      if(img.size/1024>500){
+        chusai_log.style.display = 'block';
+        chusai_log.innerText="文件最大上传限制：500K，请重新选择图片。";
+        return;
+      }
+      chusai_log.innerText="正在后台处理，请稍等，标注马上完成。";
+      chusai_log.style.display='block';
+      var formData = new FormData(); 
+      
+      formData.append("imgs", img);
+      formData.append("item", "chuanhai");
+      formData.append("detail", "chusai");
+      formData.append('csrfmiddlewaretoken','V20KvBuBUVxRWl8wxlKTqx13D0xg2vsVGkVN5bZx1h6z676SxU7fFfgbjhe3VLlL');
+      $.ajax({
+            type: 'POST',
+            url: '/competition',
+            data: formData,
+   			    dataType:'json',
+            timeout: 8000,
+			      processData: false, // 告诉jQuery不要去处理发送的数据
+			      contentType: false, // 告诉jQuery不要去设置Content-Type请求头
+
+            statusCode: {
+                    '200':function(data){
+                      newImg.src="mdimages/chuanhai_yolov5.jpg?"+Math.random();
+                      newImg.style.display = 'block';
+                      chusai_log.style.display = 'none';
+
+                    },
+                    '404':function(data){
+                      chusai_log.style.display = 'block';
+                      chusai_log.innerText="不用等了，服务器挂了。也别刷新页面了，不会有响应的。";
+                    }
+                  },
+            complete:function(XHR,TextStatus){
+                  if(TextStatus=='timeout'){ //超时执行的程序
+                    chusai_log.style.display = 'block';
+                    chusai_log.innerText="不用等了，服务器挂了。也别刷新页面了，不会有响应的。";
+                  }
+                }
+        });
+
+    }
+
+    $('#chusai_img').change(function () {
+        f = document.getElementById('chusai_img').files[0];
+        var reads = new FileReader();
+        reads.readAsDataURL(f);
+        reads.onload = function(e) {
+            $('#chusai_yulan')[0].src = this.result;
+            $('#chusai_yulan')[0].style.display='block';
+            $('#chusai_log')[0].style.display='none';
+            $('#chusai_model')[0].style.display = 'none';
+        }
+    })
+    // 点击button来点击input:file
+    function chusai_choose() {
+        $('#chusai_img').click()
+    }
+
+  </script>
+</body>
+</html>
