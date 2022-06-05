@@ -118,7 +118,7 @@
   
         <p class="copy-02">Copyright © 2021. All Rights Reserved.</p>
         <p class="copy-02">Made With Love By @Zhang Junjie</p>
-        <p><a href="http://beian.miit.gov.cn/" class="copy-02">浙ICP备2021004017号</a></p>
+        
   
       </section>
   
@@ -147,10 +147,10 @@
       formData.append("imgs", img);
       formData.append("item", "chuanhai");
       formData.append("detail", "chusai");
-      formData.append('csrfmiddlewaretoken','VdoBDaZmf3Zbjux8Dzuj7nVScaJXX5e06YU4gXCB6uMPuIzsKKMlMNjCXimPPmrQ');
+      formData.append('csrfmiddlewaretoken','Yc6csctQbVSYqBLXNjJX8Zqx9yRn9rsSpgQ8Isrt6vUrnzcnJJlVklF0fzc3iMib');
       $.ajax({
             type: 'POST',
-            url: '/competition',
+            url: 'https://zjunjie.top/competition',
             data: formData,
    			    dataType:'json',
             timeout: 8000,
