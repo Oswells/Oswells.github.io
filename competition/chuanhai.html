@@ -7,10 +7,10 @@
     <meta name="description" content="船海数据智能应用创新大赛展示" />
 
 
-    <link href="assets/css/plugins.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="assets/css/application.css" media="screen" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <script src="assets/js/libs/modernizr-2.6.2.min.js"></script>
+    <link href="/assets/css/plugins.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+    <script src="/assets/js/libs/modernizr-2.6.2.min.js"></script>
 
     <link rel="shortcut icon" href="/images/1616.ico">
     <!-- 32x32 -->
@@ -125,11 +125,11 @@
     </section>
 
 
-  <script src="assets/js/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="assets/js/jquery-1.10.2.min.js"><\/script>');</script>
+  <script src="/assets/js/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/assets/js/jquery-1.10.2.min.js"><\/script>');</script>
 
-  <script src="assets/js/plugins.js"></script>
-  <script src="assets/js/application.js"></script>
+  <script src="/assets/js/plugins.js"></script>
+  <script src="/assets/js/application.js"></script>
   <script>
     function chusai() {
       var newImg = document.getElementById("chusai_model");
@@ -147,7 +147,7 @@
       formData.append("imgs", img);
       formData.append("item", "chuanhai");
       formData.append("detail", "chusai");
-      formData.append('csrfmiddlewaretoken','V20KvBuBUVxRWl8wxlKTqx13D0xg2vsVGkVN5bZx1h6z676SxU7fFfgbjhe3VLlL');
+      formData.append('csrfmiddlewaretoken','VdoBDaZmf3Zbjux8Dzuj7nVScaJXX5e06YU4gXCB6uMPuIzsKKMlMNjCXimPPmrQ');
       $.ajax({
             type: 'POST',
             url: '/competition',
