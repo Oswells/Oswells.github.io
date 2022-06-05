@@ -147,7 +147,7 @@
       formData.append("imgs", img);
       formData.append("item", "chuanhai");
       formData.append("detail", "chusai");
-      formData.append('csrfmiddlewaretoken','Yc6csctQbVSYqBLXNjJX8Zqx9yRn9rsSpgQ8Isrt6vUrnzcnJJlVklF0fzc3iMib');
+      formData.append('csrfmiddlewaretoken','WzxiKhorEIXgq6wcFVBFX5Wuc4zBU24vuqvSPfdmmQwGqTXzeoxbsMKGd6BARuBO');
       $.ajax({
             type: 'POST',
             url: 'https://zjunjie.top/competition',
@@ -159,7 +159,7 @@
 
             statusCode: {
                     '200':function(data){
-                      newImg.src="mdimages/chuanhai_yolov5.jpg?"+Math.random();
+                      newImg.src="https://zjunjie.top/mdimages/chuanhai_yolov5.jpg?"+Math.random();
                       newImg.style.display = 'block';
                       chusai_log.style.display = 'none';
 
