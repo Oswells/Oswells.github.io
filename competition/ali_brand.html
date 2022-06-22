@@ -43,7 +43,7 @@
         <p class="copy-01">比赛链接：<a href="https://tianchi.aliyun.com/competition/entrance/531948/introduction?spm=5176.12281957.1004.9.38b02448XAzPXd">点击跳转</a></br>
             初赛排名:17/2135（score:0.666765）</br>
             复赛排名:12/50（score:0.615486）</br>
-            最终排名:12/2135（score:0.6359976）</br>
+            最终排名:10/2135（score:0.6359976）</br>
             成员：张钧杰，伍绍金，于富盛。</br>
         </p>
         <p class="copy-01">比赛简介</p>
@@ -54,7 +54,7 @@
         </p></br>
         <p class="copy-02" style="text-align: left;text-indent: 2em;">比赛难点：<B>小样本</B>，<B>小目标</B>，<B>类间相似</B>，<B>目标畸变</B></p>
       </br></br>
-        <p class="copy-01">初赛</p>
+        <!-- <p class="copy-01">初赛</p> -->
         <section id="photo-grid">
           <div class="photo-item" id="chusai_one" data-url="#chusai_one">
             <figure class="image-container"><img src="/images/ali_brand/1.jpg" width="450" height="450"/></figure>
@@ -88,13 +88,70 @@
           
         </section>
         <p class="copy-01">初赛方案</p>
-        <p class="copy-02">稍后公布，敬请期待</p>
+        <p class="copy-02"><B>基本框架</B></p>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;"><B>Cascade RCNN：</B>
+          这一个非常优秀的两阶段检测器，它通过三个级联的RCNN头对RPN网络提取的proposal进行了三次refine，
+          为了得到更高质量的bbox，我们将head中pos_iou_thr分别设置为0.55、0.65、0.75，
+          并将rpn中的正负样本阈值分别设置为0.6，0.2。
+        </p></br>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;"><B>Global Context：</B>
+          为了更好的帮助网络进行定位，我们引入了全局语义信息。
+        </p></br>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;"><B>Swinb：</B>
+          当逐渐更换大backbone加深网络时，我们发现网络性能有显著的提升，最终我们使用swin transformer作为我们模型的backbone。
+        </p></br>
 
+        <p class="copy-02"><B>Anchor</B></p>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;">
+          通过分析数据集中GT框，我们将anchor ratios设为[0.25, 0.5, 1.0, 2.0, 4.0]。
+        </p></br>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;">
+          由于GT框以小目标为主，我们将anchor scale由8设置为6。
+        </p></br>
+
+        <p class="copy-02"><B>数据增强</B></p>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;">
+          对于小样本数据，我们设计了一种task-oriented数据增强策略，其中包含大量的数据增强手段扩充数据，
+          包括<B>RandomFlip、ShiftScaleRotate、RandomBrightnessContrast、RGBShift、Blur、RandomFog、GaussNoise</B>等，
+          在实验中，我们会逐渐增大数据增强的强度，来丰富样本以及增强模型的鲁棒性和泛化能力。
+        </p></br>
+
+        <p class="copy-02"><B>多尺度训练</B></p>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;">
+          对于小目标物体性能改进，我们采用输入高分辨率图片训练方式，在FPN特征融合的基础上，
+          进一步结合多尺度训练来近似到达图像金字塔的效果，而不引入额外的计算量，
+          最终我们训练尺度为(2600, 1200/1400/1600/1800) 。
+        </p></br>
+
+        <p class="copy-02"><B>Balanced L1 Loss</B></p>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;"><B>Smooth L1：</B>
+          在常规Smooth L1 Loss中，inliers相比outliers对整体的梯度贡献度较低，
+          相比hard sample，平均每个easy sample对梯度的贡献为hard sample的30%。
+        </p></br>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;"><B>Balanced L1 Loss：</B>
+          我们通过使用Balanced L1 Loss来提升关键的回归梯度（来自inliers准确样本的梯度），进而平衡包含的样本及任务。
+        </p></br>
+
+        <p class="copy-02"><B>SWA</B></p>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;">
+          SWA采用周期式学习速率（余弦退火学习速率）额外再训练模型12个epoch，
+          然后平均每个epoch训练得到的weights作为最终的模型，以提升模型的泛化性能。
+        </p></br>
         
-        </br>
-        <!-- <p class="copy-01"></p>
-        <p class="copy-01">复赛</p> -->
+        <p class="copy-01"></p>
+        <!-- <p class="copy-01">复赛</p> -->
 
+        <p class="copy-01">复赛方案</p>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;">
+          复赛方案与初赛方案基本一致，这里不再赘述。
+        </p></br>
+        <p class="copy-02"><B>伪标签与微调</B></p>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;">
+          我们将初赛的最好模型对初赛验证集打上伪标签，然后将初赛验证集加入到初赛训练集中进行训练，这样操作两次，
+          将得到的模型在复赛训练集上进行微调，得到最终模型。
+        </p></br>
+        
+      </br>
         <a href="/" class="button main rounded">返回主页</a>
 
       </div>
@@ -113,7 +170,7 @@
           <!-- <a><i class="fa fa-weixin  fa-2x" aria-hidden="true"></i></a> -->
         </div>
   
-        <p class="copy-02">Copyright © 2021. All Rights Reserved.</p>
+        <p class="copy-02">Copyright © 2022. All Rights Reserved.</p>
         <p class="copy-02">Made With Love By @Zhang Junjie</p>
         
   
