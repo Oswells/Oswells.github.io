@@ -41,10 +41,15 @@
         <h1 class="heading h-01">2022年船海数据智能应用创新大赛</h1>
 
         <p class="copy-01">比赛链接：<a href="https://competition.huaweicloud.com/information/1000041661/introduction">点击跳转</a></br>
-            当前初赛排名第一（score:0.5413）</br>
+            初赛排名：1/351（score:0.5413）</br>
+            决赛排名：10/27（score:0.42881）</br>
             成员：张钧杰，伍绍金，于富盛。</br>
         </p>
-        <p class="copy-01">初赛</p>
+        <p class="copy-01">比赛简介</p>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;">第一届船海数据智能应用创新大赛是由太湖实验室、华为、无锡市委人才工作领导小组办公室、无锡市科学技术局共同主办的面向全国的人工智能交流赛事，通过大赛活动为联合参赛企业、开发者及合作伙伴，搭建一个技术交流、人才培养、产业融合、机遇共创的平台，孵化行业应用解决方案，树立太湖实验室以及华为在船海行业中的应用标杆地位，提升太湖实验室及华为在船海行业解决方案影响力和竞争力。
+        </p></br>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;">比赛难点：<B>小目标</B>，<B>类间相似</B>，<B>标签问题严重</B>，<B>速度与精度之间的平衡</B></p>
+        <!-- <p class="copy-01">初赛</p> -->
         <section id="photo-grid">
           <div class="photo-item" id="chusai_one" data-url="#chusai_one">
             <figure class="image-container"><img src="/images/chuanhai/340.jpg" width="450" height="450"/></figure>
@@ -78,10 +83,25 @@
           
         </section>
         <p class="copy-01">初赛方案</p>
-        <p class="copy-02">复赛结束后公布</p>
-
+        <p class="copy-02" style="text-align: left;text-indent: 2em;"><B>数据集分析：</B>
+          初赛数据集为船海相关的网络图片，图片尺寸差别很大，图片质量参差不齐，标注框有偏大有偏小，有的框甚至框了多个船只。标签之间也有语义的重合：码头与各类船（大量的船聚在一起应当被认为是码头）。
+        </p></br>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;">我们使用<B>Yolov5m</B>作为我们的Baseline，在此基础上，我们测试了大量的方案，下面列出我们的最终方案。
+        </p></br>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;"><B>Resize尺寸：</B>
+          通过分析数据集的分布，我们发现大量的图像面积在1600-3600之间，为了减小图片放缩带来的图像失真同时提高检测速度，我们将图片resize到480x480进行训练，在推理阶段也先将图像resize到该尺寸。
+        </p></br>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;"><B>优化器：</B>
+          SAM优化器，该优化器在损失地貌中寻找平坦的区域，使得模型具有很强的泛化性能，并且能够消除部分数据集标签问题带来的影响。
+        </p></br>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;"><B>数据增强：</B>
+          HSV,mosaic,translate,filplr,cutout,mixup,TTA。大量的数据增强使得网络具有更强的鲁棒性与泛化性能。
+        </p></br>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;"><B>删除冗余框：</B>
+          我们发现训练集中有非常多的图像只有单一类别的目标，因此我们怀疑在测试集中也存在这一现象，于是我们对NMS之后topk个预测框的类别进行判断，如果都属于同一类别，则删除该图片中其他类别的预测框。
+        </p></br>
         <p class="copy-01"></p>
-        <p class="copy-01" id="初赛模型体验">初赛模型体验(非最佳模型)</p>
+        <p class="copy-01" id="初赛模型体验">初赛模型体验</p>
         <p class="copy-02">上传任意船海相关图像，下方会展示模型标注结果。</p>
         <center>
           <figure class="image-container">
@@ -95,9 +115,26 @@
         <a class="button main rounded toprefine" onclick="chusai_choose()">选择图片</a>
         <a class="button main rounded toprefine" onclick="chusai()">上传图片</a>
         </br>
-        <!-- <p class="copy-01"></p>
-        <p class="copy-01">复赛</p> -->
 
+        <p class="copy-01">决赛方案</p>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;"><B>数据集分析：</B>
+          决赛训练数据集为112个视频，该数据集在标注框上与训练集有着一样的问题：有的框偏大有的偏小，甚至有的框完全标注在背景上。
+        </p></br>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;">我们的决赛方案与初赛方案有着许多相似之处，决赛中，我们依旧使用的方案：Yolov5m作为Baseline，SAM优化器，大量的数据增强。
+        </p></br>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;"><B>Resize尺寸：</B>
+          我们发现决赛数据集图片均具有较大尺寸，因此我们在华为云平台上测试了不同Resize尺度和TTA尺寸下的推理速度，最终选用了640x640。
+        </p></br>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;"><B>TensorRT推理加速：</B>
+          初步使用TensorRT（TRT）时，模型在精度上有所下降，但是在推理速度上有了显著的提升。在不使用TRT之前，为了满足速度要求，TTA只能使用两个尺度，而使用TRT后，TTA可以使用3个尺度，相比原先精度上有所提升。
+        </p></br>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;"><B>调整预测框：</B>
+          由于数据集标注框存在偏大偏小的问题，在IOU0.95的标准下预测框很难与其相匹配，因此我们在后处理阶段对高置信度的预测框进行复制放大缩小操作，将原先一个框变为5个不同大小的框，并降低其置信度，将其添加至尾部数据中，通过提高召回率从而达到提高MAP的目的。
+        </p></br>
+
+        <p class="copy-01">社区贡献</p>
+        <p class="copy-02" style="text-align: left;text-indent: 2em;">我们在决赛期间发现并解决了Yolov5中关于cutout代码存在的问题，已向官方提交PR，最新的Yolov5代码中已不存在该问题。
+        </p></br>
         <a href="/" class="button main rounded">返回主页</a>
 
       </div>
@@ -147,7 +184,7 @@
       formData.append("imgs", img);
       formData.append("item", "chuanhai");
       formData.append("detail", "chusai");
-      formData.append('csrfmiddlewaretoken','cVSruJ2obHTqzLwRP4ux0GcMNabWiNZAozNfeBQ2P5rKyeqstbKQANoaGxau7fYn');
+      formData.append('csrfmiddlewaretoken','NUdJNwwpKHvucvDZ6SJNXWhbq9D5G2QttzkvK6gcGMKUMUpZtkCmZOsLcRKGduvN');
       $.ajax({
             type: 'POST',
             url: 'https://zjunjie.top/competition',
